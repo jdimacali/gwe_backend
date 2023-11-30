@@ -21,6 +21,7 @@
     "react-router-dom": "5.3.4",
     "strapi-advanced-uuid": "^1.1.4",
     "strapi-plugin-rest-cache": "^4.2.8",
+    "strapi-plugin-schemas-to-ts": "^1.1.21",
     "styled-components": "5.3.3"
   },
   "author": {
