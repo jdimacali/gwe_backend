@@ -749,16 +749,16 @@ export interface ApiEventEvent extends Schema.CollectionType {
     singularName: 'event';
     pluralName: 'events';
     displayName: 'Events';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     image: Attribute.Media & Attribute.Required;
     url: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::event.event',
       'oneToOne',
@@ -780,9 +780,10 @@ export interface ApiLinktreeLinktree extends Schema.CollectionType {
     singularName: 'linktree';
     pluralName: 'linktrees';
     displayName: 'Linktree';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
@@ -790,7 +791,6 @@ export interface ApiLinktreeLinktree extends Schema.CollectionType {
     icon: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::linktree.linktree',
       'oneToOne',
