@@ -712,29 +712,30 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
-export interface ApiDashboardImageDashboardImage extends Schema.CollectionType {
-  collectionName: 'dashboard_images';
+export interface ApiDashboardDashboard extends Schema.SingleType {
+  collectionName: 'dashboards';
   info: {
-    singularName: 'dashboard-image';
-    pluralName: 'dashboard-images';
-    displayName: 'dashboard_image';
+    singularName: 'dashboard';
+    pluralName: 'dashboards';
+    displayName: 'Dashboard';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
-    image: Attribute.Media & Attribute.Required;
+    Title: Attribute.String & Attribute.Required;
+    Subtitle: Attribute.String;
+    Images: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::dashboard-image.dashboard-image',
+      'api::dashboard.dashboard',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::dashboard-image.dashboard-image',
+      'api::dashboard.dashboard',
       'oneToOne',
       'admin::user'
     > &
@@ -899,7 +900,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::category.category': ApiCategoryCategory;
-      'api::dashboard-image.dashboard-image': ApiDashboardImageDashboardImage;
+      'api::dashboard.dashboard': ApiDashboardDashboard;
       'api::event.event': ApiEventEvent;
       'api::linktree.linktree': ApiLinktreeLinktree;
       'api::product.product': ApiProductProduct;
