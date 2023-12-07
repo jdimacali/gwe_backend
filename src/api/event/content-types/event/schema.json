@@ -25,6 +25,18 @@
     },
     "url": {
       "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "address": {
+      "type": "string"
+    },
+    "end_date": {
+      "type": "date"
     }
   }
 }

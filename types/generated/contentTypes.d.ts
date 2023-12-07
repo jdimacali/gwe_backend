@@ -762,6 +762,10 @@ export interface ApiEventEvent extends Schema.CollectionType {
   attributes: {
     image: Attribute.Media & Attribute.Required;
     url: Attribute.String;
+    name: Attribute.String;
+    start_date: Attribute.Date;
+    address: Attribute.String;
+    end_date: Attribute.Date;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

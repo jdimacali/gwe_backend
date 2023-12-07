@@ -8,22 +8,38 @@ export interface Event {
   attributes: {
     createdAt: Date;    updatedAt: Date;    publishedAt?: Date;    image: { data: Media };
     url?: string;
+    name?: string;
+    start_date?: Date;
+    address?: string;
+    end_date?: Date;
   };
 }
 export interface Event_Plain {
   id: number;
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  image: Media;
   url?: string;
+  name?: string;
+  start_date?: Date;
+  address?: string;
+  end_date?: Date;
 }
 
 export interface Event_NoRelations {
   id: number;
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  image: number;
   url?: string;
+  name?: string;
+  start_date?: Date;
+  address?: string;
+  end_date?: Date;
 }
 
 export interface Event_AdminPanelLifeCycle {
   id: number;
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  image: AdminPanelRelationPropertyModification<Media>;
   url?: string;
+  name?: string;
+  start_date?: Date;
+  address?: string;
+  end_date?: Date;
 }
