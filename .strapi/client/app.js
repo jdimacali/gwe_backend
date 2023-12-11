@@ -7,6 +7,7 @@ import i18N from "@strapi/plugin-i18n/strapi-admin";
 import seo from "@strapi/plugin-seo/strapi-admin";
 import usersPermissions from "@strapi/plugin-users-permissions/strapi-admin";
 import strapiAdvancedUuid from "strapi-advanced-uuid/strapi-admin";
+import emailDesigner from "strapi-plugin-email-designer/strapi-admin";
 import restCache from "strapi-plugin-rest-cache/strapi-admin";
 import { renderAdmin } from "@strapi/strapi/admin";
 
@@ -17,6 +18,7 @@ renderAdmin(document.getElementById("strapi"), {
     seo: seo,
     "users-permissions": usersPermissions,
     "strapi-advanced-uuid": strapiAdvancedUuid,
+    "email-designer": emailDesigner,
     "rest-cache": restCache,
   },
 });
