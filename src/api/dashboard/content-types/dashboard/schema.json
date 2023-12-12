@@ -4,7 +4,8 @@
   "info": {
     "singularName": "dashboard",
     "pluralName": "dashboards",
-    "displayName": "Dashboard"
+    "displayName": "Dashboard",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -19,15 +20,21 @@
       "type": "string"
     },
     "Images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true,
-      "required": true
+      ]
+    },
+    "Button": {
+      "type": "string",
+      "maxLength": 20,
+      "minLength": 1,
+      "default": "Shop Now"
     }
   }
 }

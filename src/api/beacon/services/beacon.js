@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * linktree service
+ * beacon service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::linktree.linktree');
+module.exports = createCoreService('api::beacon.beacon');

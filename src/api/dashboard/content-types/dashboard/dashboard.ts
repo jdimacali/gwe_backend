@@ -9,6 +9,7 @@ export interface Dashboard {
     createdAt: Date;    updatedAt: Date;    publishedAt?: Date;    Title: string;
     Subtitle?: string;
     Images: { data: Media[] };
+    Button?: string;
   };
 }
 export interface Dashboard_Plain {
@@ -16,6 +17,7 @@ export interface Dashboard_Plain {
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  Title: string;
   Subtitle?: string;
   Images: Media[];
+  Button?: string;
 }
 
 export interface Dashboard_NoRelations {
@@ -23,6 +25,7 @@ export interface Dashboard_NoRelations {
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  Title: string;
   Subtitle?: string;
   Images: number[];
+  Button?: string;
 }
 
 export interface Dashboard_AdminPanelLifeCycle {
@@ -30,4 +33,5 @@ export interface Dashboard_AdminPanelLifeCycle {
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  Title: string;
   Subtitle?: string;
   Images: AdminPanelRelationPropertyModification<Media>[];
+  Button?: string;
 }

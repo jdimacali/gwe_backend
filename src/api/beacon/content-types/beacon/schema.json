@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "beacons",
+  "info": {
+    "singularName": "beacon",
+    "pluralName": "beacons",
+    "displayName": "Linktree",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "links.links"
+    },
+    "Title": {
+      "type": "string",
+      "required": true,
+      "default": "GweArt",
+      "maxLength": 30,
+      "minLength": 1
+    },
+    "Subtitle": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

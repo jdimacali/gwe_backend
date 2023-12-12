@@ -1,16 +1,10 @@
 {
-  "kind": "collectionType",
-  "collectionName": "linktrees",
+  "collectionName": "components_links_links",
   "info": {
-    "singularName": "linktree",
-    "pluralName": "linktrees",
-    "displayName": "Linktree",
+    "displayName": "Links",
     "description": ""
   },
-  "options": {
-    "draftAndPublish": false
-  },
-  "pluginOptions": {},
+  "options": {},
   "attributes": {
     "name": {
       "type": "string",

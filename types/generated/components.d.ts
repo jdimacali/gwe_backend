@@ -1,5 +1,18 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface LinksLinks extends Schema.Component {
+  collectionName: 'components_links_links';
+  info: {
+    displayName: 'Links';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    url: Attribute.String & Attribute.Required;
+    icon: Attribute.String;
+  };
+}
+
 export interface SharedMetaSocial extends Schema.Component {
   collectionName: 'components_shared_meta_socials';
   info: {
@@ -54,6 +67,7 @@ export interface SharedSeo extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'links.links': LinksLinks;
       'shared.meta-social': SharedMetaSocial;
       'shared.seo': SharedSeo;
     }

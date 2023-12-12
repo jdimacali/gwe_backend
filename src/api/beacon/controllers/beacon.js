@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * linktree controller
+ * beacon controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::linktree.linktree');
+module.exports = createCoreController('api::beacon.beacon');

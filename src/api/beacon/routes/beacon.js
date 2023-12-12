@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * linktree router
+ * beacon router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::linktree.linktree');
+module.exports = createCoreRouter('api::beacon.beacon');

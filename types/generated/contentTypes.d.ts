@@ -731,6 +731,47 @@ export interface PluginEmailDesignerEmailTemplate
   };
 }
 
+export interface ApiBeaconBeacon extends Schema.SingleType {
+  collectionName: 'beacons';
+  info: {
+    singularName: 'beacon';
+    pluralName: 'beacons';
+    displayName: 'Linktree';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    Links: Attribute.Component<'links.links', true>;
+    Title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 1;
+        maxLength: 30;
+      }> &
+      Attribute.DefaultTo<'GweArt'>;
+    Subtitle: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::beacon.beacon',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::beacon.beacon',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Schema.CollectionType {
   collectionName: 'categories';
   info: {
@@ -803,6 +844,7 @@ export interface ApiDashboardDashboard extends Schema.SingleType {
     singularName: 'dashboard';
     pluralName: 'dashboards';
     displayName: 'Dashboard';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -811,6 +853,12 @@ export interface ApiDashboardDashboard extends Schema.SingleType {
     Title: Attribute.String & Attribute.Required;
     Subtitle: Attribute.String;
     Images: Attribute.Media & Attribute.Required;
+    Button: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        minLength: 1;
+        maxLength: 20;
+      }> &
+      Attribute.DefaultTo<'Shop Now'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -856,38 +904,6 @@ export interface ApiEventEvent extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::event.event',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiLinktreeLinktree extends Schema.CollectionType {
-  collectionName: 'linktrees';
-  info: {
-    singularName: 'linktree';
-    pluralName: 'linktrees';
-    displayName: 'Linktree';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    name: Attribute.String & Attribute.Required;
-    url: Attribute.String & Attribute.Required;
-    icon: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::linktree.linktree',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::linktree.linktree',
       'oneToOne',
       'admin::user'
     > &
@@ -1028,11 +1044,11 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::email-designer.email-template': PluginEmailDesignerEmailTemplate;
+      'api::beacon.beacon': ApiBeaconBeacon;
       'api::category.category': ApiCategoryCategory;
       'api::contact-email.contact-email': ApiContactEmailContactEmail;
       'api::dashboard.dashboard': ApiDashboardDashboard;
       'api::event.event': ApiEventEvent;
-      'api::linktree.linktree': ApiLinktreeLinktree;
       'api::order.order': ApiOrderOrder;
       'api::product.product': ApiProductProduct;
       'api::slide.slide': ApiSlideSlide;
