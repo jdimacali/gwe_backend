@@ -60,18 +60,9 @@ module.exports = ({ env }) => {
         database: env("DATABASE_NAME", ""),
         user: env("DATABASE_USERNAME", ""),
         password: env("DATABASE_PASSWORD", ""),
-        ssl: {
-          rejectUnauthorized: env.bool("DATABASE_SSL_SELF", true), // For self-signed certificates
-        },
-        options: {
-          ssl: env.bool("DATABASE_SSL", false),
-        },
+
       },
       useNullAsDefault: true,
-      pool: {
-        min: env.int("DATABASE_POOL_MIN", 2),
-        max: env.int("DATABASE_POOL_MAX", 10),
-      },
     },
     sqlite: {
       connection: {
